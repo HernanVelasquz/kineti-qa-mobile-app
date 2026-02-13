@@ -1,9 +1,8 @@
-import React from 'react';
+import { ReactNode } from 'react';
 import { Text as RNText, TextProps as RNTextProps, StyleSheet } from 'react-native';
 
 interface TextProps extends RNTextProps {
-  children: React.ReactNode;
-  // You can add more custom props or variants here
+  children: ReactNode;
 }
 
 export const Text = ({ children, style, ...rest }: TextProps) => {
@@ -17,6 +16,6 @@ export const Text = ({ children, style, ...rest }: TextProps) => {
 const styles = StyleSheet.create({
   defaultText: {
     fontSize: 16,
-    color: '#333', // Default text color
+    color: '#333',
   },
 });
