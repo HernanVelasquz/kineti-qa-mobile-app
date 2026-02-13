@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import {
   TouchableOpacity,
   Text as RNText,
@@ -7,14 +7,13 @@ import {
   TouchableOpacityProps,
 } from 'react-native';
 
-interface ButtonProps extends TouchableOpacityProps {
+interface ButtonAtomProps extends TouchableOpacityProps {
   title: string;
   onPress: () => void;
   isLoading?: boolean;
-  // You can add more custom props for variants (primary, secondary, etc.)
 }
 
-export const Button = ({ title, onPress, isLoading = false, style, ...rest }: ButtonProps) => {
+export const ButtonAtom: FC<ButtonAtomProps> = ({ title, onPress, isLoading = false, style, ...rest }) => {
   return (
     <TouchableOpacity
       style={[styles.button, style]}
