@@ -4,11 +4,11 @@
     "slug": "GymFlow",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./src/presentation/presentation/assets/icon.png",
+    "icon": "./src/presentation/assets/img/icon.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
     "splash": {
-      "image": "./src/presentation/presentation/assets/splash-icon.png",
+      "image": "./src/presentation/assets/img/splash-icon.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -18,7 +18,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./src/presentation/presentation/assets/adaptive-icon.png",
+        "foregroundImage": "./src/presentation/assets/img/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
       "edgeToEdgeEnabled": true,
@@ -26,7 +26,7 @@
       "package": "com.anonymous.GymFlow"
     },
     "web": {
-      "favicon": "./src/presentation/presentation/assets/favicon.png"
+      "favicon": "./src/presentation/assets/img/favicon.png"
     }
   }
 }
