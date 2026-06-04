@@ -11,12 +11,13 @@ import { AppNavigator } from '@/presentation/navigation/AppNavigator';
 enableScreens();
 
 export default function App() {
+
   return (
     <SafeAreaProvider>
       <PaperProvider>
         <NavigationContainer>
           <AppNavigator />
-          <StatusBar style="auto" translucent backgroundColor="transparent" />
+          <StatusBar style="light" />
         </NavigationContainer>
       </PaperProvider>
     </SafeAreaProvider>
