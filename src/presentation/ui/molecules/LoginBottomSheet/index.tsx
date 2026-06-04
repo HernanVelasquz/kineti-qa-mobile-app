@@ -1,7 +1,7 @@
-import { FC, useState } from 'react';
-import { View, Modal, Pressable, KeyboardAvoidingView, Platform, TextInput } from 'react-native';
-import AppText from '@/presentation/ui/atoms/AppText';
-import AppButton from '@/presentation/ui/atoms/AppButton';
+import { FC } from "react";
+import { View, Modal, Pressable, KeyboardAvoidingView, Platform } from "react-native";
+import AppText from "@/presentation/ui/atoms/AppText";
+import LoginForm from "@/presentation/ui/organisms/LoginForm";
 
 interface LoginBottomSheetProps {
   isVisible: boolean;
@@ -12,14 +12,11 @@ interface LoginBottomSheetProps {
 export const LoginBottomSheet: FC<LoginBottomSheetProps> = ({
   isVisible,
   onClose,
-  onLoginSubmit
+  onLoginSubmit,
 }) => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-
-  const handleSubmit = () => {
+  const handleSubmit = (email: string, pass: string) => {
     if (onLoginSubmit) {
-      onLoginSubmit(email, password);
+      onLoginSubmit(email, pass);
     }
   };
 
@@ -31,69 +28,34 @@ export const LoginBottomSheet: FC<LoginBottomSheetProps> = ({
       onRequestClose={onClose}
     >
       <KeyboardAvoidingView
-        behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+        behavior={Platform.OS === "ios" ? "padding" : "height"}
         className="flex-1 justify-end"
       >
         {/* Semi-transparent Backdrop */}
-        <Pressable 
-          className="flex-1 bg-black/60" 
-          onPress={onClose} 
-        />
+        <Pressable className="flex-1 bg-black/75" onPress={onClose} />
 
         {/* Bottom Sheet Card Container */}
-        <View className="bg-[#161616] border-t border-white/10 rounded-t-[30px] px-6 pb-10 pt-4 shadow-2xl">
+        <View className="bg-[#121212] border-t border-white/10 rounded-t-[32px] px-6 pb-12 pt-3 shadow-2xl">
           {/* Drag Handle Decoration */}
-          <View className="w-12 h-1 bg-white/20 rounded-full align-self-center self-center mb-6" />
+          <View className="w-14 h-1.5 bg-white/15 rounded-full self-center mb-6" />
 
-          {/* Header */}
-          <AppText className="text-white text-2xl font-outfit-bold mb-2">
-            ¡Hola de nuevo!
-          </AppText>
-          <AppText className="text-white/60 font-outfit text-sm mb-6">
-            Inicia sesión para continuar tu entrenamiento.
-          </AppText>
-
-          {/* Input Fields */}
-          <View className="space-y-4 mb-6">
-            <View className="mb-4">
-              <AppText className="text-white/80 font-outfit-medium text-xs mb-2">
-                CORREO ELECTRÓNICO
-              </AppText>
-              <TextInput
-                value={email}
-                onChangeText={setEmail}
-                placeholder="ejemplo@gymflow.com"
-                placeholderTextColor="rgba(255,255,255,0.3)"
-                keyboardType="email-address"
-                autoCapitalize="none"
-                className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white font-outfit text-base"
-              />
-            </View>
-
-            <View className="mb-4">
-              <AppText className="text-white/80 font-outfit-medium text-xs mb-2">
-                CONTRASEÑA
-              </AppText>
-              <TextInput
-                value={password}
-                onChangeText={setPassword}
-                onChange={undefined}
-                placeholder="••••••••"
-                placeholderTextColor="rgba(255,255,255,0.3)"
-                secureTextEntry
-                className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white font-outfit text-base"
-              />
-            </View>
+          {/* Header Section */}
+          <View className="mb-6">
+            <AppText className="text-white text-3xl font-outfit-bold mb-1">
+              Iniciar Sesión
+            </AppText>
+            <AppText className="text-white/50 font-outfit text-sm">
+              Accede a tu perfil de alto rendimiento
+            </AppText>
           </View>
 
-          {/* Action Button */}
-          <AppButton 
-            variant="primary" 
-            onPress={handleSubmit}
-            className="mt-2"
-          >
-            INICIAR SESIÓN
-          </AppButton>
+          {/* LoginForm Organism */}
+          <LoginForm
+            onSubmit={handleSubmit}
+            onForgotPasswordPress={() => console.log("Forgot password pressed")}
+            onGooglePress={() => console.log("Google social login")}
+            onApplePress={() => console.log("Apple social login")}
+          />
         </View>
       </KeyboardAvoidingView>
     </Modal>
