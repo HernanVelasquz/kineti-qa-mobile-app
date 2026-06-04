@@ -31,7 +31,7 @@ export const OnboardingContentCard: FC<OnboardingContentCardProps> = ({
           </AppText>
         </View>
 
-        <AppText className="text-white/80 font-medium text-base mb-2 leading-6">
+        <AppText className="text-slate-100 text-[1.5rem] font-medium leading-relaxed max-w-[280]">
           Entrenamientos de élite diseñados para tu máximo rendimiento físico.
         </AppText>
 
@@ -47,8 +47,7 @@ export const OnboardingContentCard: FC<OnboardingContentCardProps> = ({
           <GoogleSignInButton onPress={onGooglePress} />
         </View>
 
-        {/* Footer login options */}
-        <FooterLinkText onPressLink={onLoginLinkPress} />
+        <FooterLinkText onPressLink={onLoginLinkPress} className="text-2xl " />
       </View>
     </View>
   );

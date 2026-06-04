@@ -14,7 +14,6 @@ export const OnboardingTemplate: FC<OnboardingTemplateProps> = ({
 }) => {
   return (
     <View className="flex-1 bg-black">
-      {/* Background Image Cover */}
       <ImageBackground
         source={backgroundImageSource}
         resizeMode="cover"
@@ -22,7 +21,6 @@ export const OnboardingTemplate: FC<OnboardingTemplateProps> = ({
         style={StyleSheet.absoluteFill}
       />
 
-      {/* Elegant Dark Vignette & Bottom Gradient for Content Contrast */}
       <LinearGradient
         colors={["transparent", "rgba(0,0,0,0.6)", "rgba(0,0,0,1)"]}
         style={[StyleSheet.absoluteFillObject, { justifyContent: "flex-end" }]}

@@ -1,6 +1,6 @@
 import { FC } from "react";
 import AppButton, { AppButtonProps } from "@/presentation/ui/atoms/AppButton";
-import GoogleIcon from "@/presentation/ui/atoms/GoogleIcon";
+import AntDesign from "@expo/vector-icons/AntDesign";
 
 interface GoogleSignInButtonProps extends Omit<AppButtonProps, "children"> {
   onPress: () => void;
@@ -17,7 +17,7 @@ export const GoogleSignInButton: FC<GoogleSignInButtonProps> = ({
       variant="oauth"
       onPress={onPress}
       isLoading={isLoading}
-      icon={({ size }) => <GoogleIcon size={size} />}
+      icon={() => <AntDesign name="google" size={24} color="white" />}
       buttonColor="#131313"
       {...props}
     >
