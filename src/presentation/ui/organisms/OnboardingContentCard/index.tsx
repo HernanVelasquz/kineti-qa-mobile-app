@@ -18,7 +18,7 @@ export const OnboardingContentCard: FC<OnboardingContentCardProps> = ({
   onLoginLinkPress,
 }) => {
   return (
-    <View className="w-full justify-end">
+    <View className="w-full">
       <View className="px-6 w-full">
         <AppDividerLine className="mb-4 mt-8" />
 

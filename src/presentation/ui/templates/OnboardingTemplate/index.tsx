@@ -13,7 +13,7 @@ export const OnboardingTemplate: FC<OnboardingTemplateProps> = ({
   backgroundImageSource,
 }) => {
   return (
-    <View className="flex-1 bg-black">
+    <View className="flex-1 bg-black justify-end">
       <ImageBackground
         source={backgroundImageSource}
         resizeMode="cover"
@@ -24,6 +24,7 @@ export const OnboardingTemplate: FC<OnboardingTemplateProps> = ({
       <LinearGradient
         colors={["transparent", "rgba(0,0,0,0.6)", "rgba(0,0,0,1)"]}
         style={[StyleSheet.absoluteFillObject, { justifyContent: "flex-end" }]}
+        className="flex-1 justify-end"
       >
         <SafeAreaView className="w-full" edges={["bottom"]}>
           {children}

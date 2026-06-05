@@ -1,5 +1,5 @@
 {
-  "name": "gymflow",
+  "name": "kinetiqo-movile-app",
   "version": "1.0.0",
   "main": "index.ts",
   "scripts": {
@@ -9,14 +9,15 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@expo/vector-icons": "^14.0.2",
     "@react-navigation/native": "^7.2.5",
     "@react-navigation/native-stack": "^7.16.0",
     "expo": "^56.0.8",
     "expo-linear-gradient": "^56.0.4",
     "expo-status-bar": "^56.0.4",
     "nativewind": "^4.2.4",
-    "react": "^19.2.7",
-    "react-dom": "^19.2.7",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
     "react-native": "^0.85.3",
     "react-native-gesture-handler": "^3.0.0",
     "react-native-paper": "^5.15.3",
@@ -25,13 +26,17 @@
     "react-native-screens": "^4.25.2",
     "react-native-vector-icons": "^10.3.0",
     "react-native-worklets": "^0.9.1",
-    "tailwindcss": "^4.3.0",
+    "tailwindcss": "^3.4.17",
     "zustand": "^5.0.14"
   },
   "devDependencies": {
     "@types/react": "^19.2.16",
     "babel-plugin-module-resolver": "^5.0.3",
     "typescript": "^6.0.3"
+  },
+  "resolutions": {
+    "react": "19.2.3",
+    "react-dom": "19.2.3"
   },
   "private": true
 }
