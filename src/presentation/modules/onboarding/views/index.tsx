@@ -1,13 +1,31 @@
-import React from 'react'
-import ImageAtom from '@/presentation/ui/atoms/ImageAtom'
-import { View } from 'react-native'
+import { FC } from "react";
+import OnboardingTemplate from "@/presentation/ui/templates/OnboardingTemplate";
+import OnboardingContentCard from "@/presentation/ui/organisms/OnboardingContentCard";
+import LoginBottomSheet from "@/presentation/ui/molecules/LoginBottomSheet";
+import useOnboardingViewModel from "../viewModels/useOnboardingViewModel";
 
-const onBoardingScreen = () => {
-    return (
-        <View className='absolute inset-0 z-0 items-center'>
-            <ImageAtom source={require('@/presentation/assets/img/onboarding.png')} alt='Onboarding' width={300} height={300} className='flex-1 items-center' />
-        </View>
-    )
-}
+export const OnBoardingScreen: FC = () => {
+  const viewModel = useOnboardingViewModel();
 
-export default onBoardingScreen
+  return (
+    <>
+      <OnboardingTemplate
+        backgroundImageSource={require("@/presentation/assets/img/onboarding.png")}
+      >
+        <OnboardingContentCard
+          onStartPress={viewModel.handleStart}
+          onGooglePress={viewModel.handleGoogleSignIn}
+          onLoginLinkPress={viewModel.openLoginSheet}
+        />
+      </OnboardingTemplate>
+
+      <LoginBottomSheet
+        isVisible={viewModel.isBottomSheetVisible}
+        onClose={viewModel.closeLoginSheet}
+        onLoginSubmit={viewModel.handleLoginSubmit}
+      />
+    </>
+  );
+};
+
+export default OnBoardingScreen;
