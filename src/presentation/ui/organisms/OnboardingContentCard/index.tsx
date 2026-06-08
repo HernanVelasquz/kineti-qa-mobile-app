@@ -43,11 +43,15 @@ export const OnboardingContentCard: FC<OnboardingContentCardProps> = ({
             variant="primary"
             onPress={onStartPress}
             buttonColor="#fff"
+            style={{ borderRadius: 100 }}
           >
             {t("onboarding.button_start")}
           </AppButton>
 
-          <GoogleSignInButton onPress={onGooglePress} />
+          <GoogleSignInButton
+            style={{ borderRadius: 100 }}
+            onPress={onGooglePress}
+          />
         </View>
 
         <FooterLinkText onPressLink={onLoginLinkPress} className="text-2xl " />

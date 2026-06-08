@@ -6,6 +6,8 @@ import AppButton from "@/presentation/ui/atoms/AppButton";
 import AppInput from "@/presentation/ui/atoms/AppInput";
 import DividerWithText from "@/presentation/ui/molecules/DividerWithText";
 import SocialLoginGroup from "@/presentation/ui/molecules/SocialLoginGroup";
+import AppImage from "@/presentation/ui/atoms/AppImage";
+import { AntDesign } from "@expo/vector-icons";
 
 interface LoginFormProps {
   onSubmit: (email: string, pass: string) => void;
@@ -85,10 +87,38 @@ export const LoginForm: FC<LoginFormProps> = ({
       <DividerWithText text={t("login.or_continue_with")} />
 
       {/* Social Login Buttons */}
-      <SocialLoginGroup
+      {/* <SocialLoginGroup
         onGooglePress={onGooglePress}
         onApplePress={onApplePress}
-      />
+      /> */}
+
+      <View className="flex-row w-full items-center gap-x-4 justify-between my-4">
+        <AppButton
+          variant="oauth"
+          icon={() => (
+            <AppImage
+              source={require("@/presentation/assets/img/google-botton-icon.png")}
+              className="w-6 h-6"
+            />
+          )}
+          style={{ flex: 1, borderRadius: 100 }}
+          contentStyle={{ paddingVertical: 12 }}
+          className="bg-[#121212] border border-white/10"
+          buttonColor="#2B2B2B"
+        >
+          Google
+        </AppButton>
+        <AppButton
+          variant="oauth"
+          icon={() => <AntDesign name="apple1" size={24} color="white" />}
+          style={{ flex: 1, borderRadius: 100 }}
+          contentStyle={{ paddingVertical: 12 }}
+          className="bg-[#121212] border border-white/10"
+          buttonColor="#2B2B2B"
+        >
+          Apple
+        </AppButton>
+      </View>
     </View>
   );
 };

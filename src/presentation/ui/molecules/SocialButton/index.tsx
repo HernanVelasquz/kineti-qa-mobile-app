@@ -6,15 +6,18 @@ interface SocialButtonProps {
   provider: "google" | "apple";
   onPress: () => void;
   className?: string;
+  labelText?: string;
+  colorButton?: string;
 }
 
 export const SocialButton: FC<SocialButtonProps> = ({
   provider,
   onPress,
   className = "",
+  labelText,
+  colorButton,
 }) => {
   const iconName = provider === "google" ? "google" : "apple1";
-  const labelText = provider === "google" ? "Google" : "Apple";
 
   return (
     <AppButton
@@ -22,14 +25,8 @@ export const SocialButton: FC<SocialButtonProps> = ({
       onPress={onPress}
       className={`flex-1 border border-white/10 rounded-full bg-[#1c1c1e] ${className}`}
       contentStyle={{ paddingVertical: 10 }}
-      icon={() => (
-        <AntDesign
-          name={iconName}
-          size={18}
-          color="white"
-          style={{ marginRight: 6 }}
-        />
-      )}
+      icon={() => <AntDesign name={iconName} size={18} color="white" />}
+      buttonColor={colorButton}
     >
       {labelText}
     </AppButton>
