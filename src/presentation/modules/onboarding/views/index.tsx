@@ -1,7 +1,7 @@
 import { FC } from "react";
 
 import OnboardingTemplate from "@/presentation/ui/templates/OnboardingTemplate";
-import LoginBottomSheet from "@/presentation/ui/molecules/LoginBottomSheet";
+import LoginBottomSheet from "@/presentation/ui/organisms/LoginBottomSheet";
 import useOnboardingViewModel from "../viewModels/useOnboardingViewModel";
 import OnboardingContentCard from "@/presentation/ui/organisms/OnboardingContentCard";
 
