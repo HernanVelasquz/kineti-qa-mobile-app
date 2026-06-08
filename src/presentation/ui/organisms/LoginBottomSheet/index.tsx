@@ -62,19 +62,24 @@ export const LoginBottomSheet: FC<LoginBottomSheetProps> = ({
     >
       <View className="flex-1">
         {/* Full-screen Blur Backdrop & Dark Overlay */}
-        <Animated.View
-          style={[StyleSheet.absoluteFill, { opacity: fadeAnim }]}
-        >
-          <BlurView
-            intensity={40}
-            tint="dark"
-            style={StyleSheet.absoluteFill}
-          >
-            <Pressable className="flex-1 bg-black/60" onPress={handleClose} />
-          </BlurView>
+        <Animated.View style={[StyleSheet.absoluteFill, { opacity: fadeAnim }]}>
+          {Platform.OS === "ios" ? (
+            <BlurView
+              intensity={40}
+              tint="dark"
+              style={StyleSheet.absoluteFill}
+            >
+              <Pressable className="flex-1 bg-black/60" onPress={handleClose} />
+            </BlurView>
+          ) : (
+            <Pressable
+              className="flex-1 bg-black/75"
+              style={StyleSheet.absoluteFill}
+              onPress={handleClose}
+            />
+          )}
         </Animated.View>
 
-        {/* Content Layer */}
         <KeyboardAvoidingView
           behavior={Platform.OS === "ios" ? "padding" : "height"}
           className="flex-1 justify-end"
