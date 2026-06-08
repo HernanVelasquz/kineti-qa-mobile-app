@@ -34,7 +34,6 @@ export const LoginForm: FC<LoginFormProps> = ({
 
   return (
     <View className="w-full">
-      {/* Email Input Field */}
       <View className="mb-4">
         <AppText className="text-white/60 font-outfit-medium text-xs mb-2 tracking-widest">
           {t("login.email_label")}
@@ -49,7 +48,6 @@ export const LoginForm: FC<LoginFormProps> = ({
         />
       </View>
 
-      {/* Password Input Field */}
       <View className="mb-2">
         <AppText className="text-white/60 font-outfit-medium text-xs mb-2 tracking-widest">
           {t("login.password_label")}
@@ -64,7 +62,6 @@ export const LoginForm: FC<LoginFormProps> = ({
         />
       </View>
 
-      {/* Forgot Password Link */}
       <Pressable onPress={onForgotPasswordPress} className="self-end py-2 mb-4">
         <AppText className="text-[#FF3E3D] font-outfit-bold text-xs tracking-wider">
           {t("login.forgot_password")}
@@ -83,42 +80,12 @@ export const LoginForm: FC<LoginFormProps> = ({
         {t("login.button_submit")}
       </AppButton>
 
-      {/* Divider */}
       <DividerWithText text={t("login.or_continue_with")} />
 
-      {/* Social Login Buttons */}
-      {/* <SocialLoginGroup
+      <SocialLoginGroup
         onGooglePress={onGooglePress}
         onApplePress={onApplePress}
-      /> */}
-
-      <View className="flex-row w-full items-center gap-x-4 justify-between my-4">
-        <AppButton
-          variant="oauth"
-          icon={() => (
-            <AppImage
-              source={require("@/presentation/assets/img/google-botton-icon.png")}
-              className="w-6 h-6"
-            />
-          )}
-          style={{ flex: 1, borderRadius: 100 }}
-          contentStyle={{ paddingVertical: 12 }}
-          className="bg-[#121212] border border-white/10"
-          buttonColor="#2B2B2B"
-        >
-          Google
-        </AppButton>
-        <AppButton
-          variant="oauth"
-          icon={() => <AntDesign name="apple1" size={24} color="white" />}
-          style={{ flex: 1, borderRadius: 100 }}
-          contentStyle={{ paddingVertical: 12 }}
-          className="bg-[#121212] border border-white/10"
-          buttonColor="#2B2B2B"
-        >
-          Apple
-        </AppButton>
-      </View>
+      />
     </View>
   );
 };

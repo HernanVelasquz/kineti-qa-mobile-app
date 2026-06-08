@@ -14,18 +14,14 @@ export const SocialLoginGroup: FC<SocialLoginGroupProps> = ({
   className = "",
 }) => {
   return (
-    <View className={`flex-row justify-between w-full gap-x-4 ${className}`}>
+    <View className={`flex-row justify-between w-full gap-x-4 my-4 ${className}`}>
       <SocialButton
         provider="google"
         onPress={onGooglePress}
-        labelText="Google"
-        // colorButton="#000000"
       />
       <SocialButton
         provider="apple"
         onPress={onApplePress}
-        labelText="Apple"
-        colorButton="#000000"
       />
     </View>
   );
