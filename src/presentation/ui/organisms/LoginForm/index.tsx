@@ -6,8 +6,6 @@ import AppButton from "@/presentation/ui/atoms/AppButton";
 import AppInput from "@/presentation/ui/atoms/AppInput";
 import DividerWithText from "@/presentation/ui/molecules/DividerWithText";
 import SocialLoginGroup from "@/presentation/ui/molecules/SocialLoginGroup";
-import AppImage from "@/presentation/ui/atoms/AppImage";
-import { AntDesign } from "@expo/vector-icons";
 
 interface LoginFormProps {
   onSubmit: (email: string, pass: string) => void;
