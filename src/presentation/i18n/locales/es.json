@@ -1,0 +1,24 @@
+{
+  "onboarding": {
+    "title_part1": "SUPERA TUS",
+    "title_part2": "LÍMITES",
+    "subtitle": "Entrenamientos de élite diseñados para tu máximo rendimiento físico.",
+    "button_start": "COMENZAR AHORA",
+    "button_google": "Continuar con Google",
+    "has_account": "¿Ya tienes cuenta?",
+    "login_link": "Iniciar Sesión"
+  },
+  "login": {
+    "title": "Iniciar Sesión",
+    "subtitle": "Accede a tu perfil de alto rendimiento",
+    "email_label": "CORREO ELECTRÓNICO",
+    "password_label": "CONTRASEÑA",
+    "email_placeholder": "alex.pro@fitness.com",
+    "forgot_password": "¿OLVIDASTE TU CONTRASEÑA?",
+    "button_submit": "INGRESAR",
+    "or_continue_with": "o continúa con"
+  },
+  "home": {
+    "title": "Pantalla Principal (Home)"
+  }
+}

@@ -14,9 +14,15 @@ export const SocialLoginGroup: FC<SocialLoginGroupProps> = ({
   className = "",
 }) => {
   return (
-    <View className={`flex-row justify-between w-full gap-x-4 ${className}`}>
-      <SocialButton provider="google" onPress={onGooglePress} />
-      <SocialButton provider="apple" onPress={onApplePress} />
+    <View className={`flex-row justify-between w-full gap-x-4 my-4 ${className}`}>
+      <SocialButton
+        provider="google"
+        onPress={onGooglePress}
+      />
+      <SocialButton
+        provider="apple"
+        onPress={onApplePress}
+      />
     </View>
   );
 };

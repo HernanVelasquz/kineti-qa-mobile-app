@@ -1,17 +1,17 @@
-import './global.css';
-import 'react-native-gesture-handler';
-import { StatusBar } from 'expo-status-bar';
-import { enableScreens } from 'react-native-screens';
-import { Provider as PaperProvider } from 'react-native-paper';
-import { NavigationContainer } from '@react-navigation/native';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { AppNavigator } from '@/presentation/navigation/AppNavigator';
+import "./global.css";
+import "@/presentation/i18n";
+import "react-native-gesture-handler";
+import { StatusBar } from "expo-status-bar";
+import { enableScreens } from "react-native-screens";
+import { Provider as PaperProvider } from "react-native-paper";
+import { NavigationContainer } from "@react-navigation/native";
+import { SafeAreaProvider } from "react-native-safe-area-context";
+import { AppNavigator } from "@/presentation/navigation/AppNavigator";
 
 // Enable react-native-screens usage
 enableScreens();
 
 export default function App() {
-
   return (
     <SafeAreaProvider>
       <PaperProvider>

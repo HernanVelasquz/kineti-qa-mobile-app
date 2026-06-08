@@ -1,5 +1,6 @@
 import { FC, useState } from "react";
 import { View, Pressable } from "react-native";
+import { useTranslation } from "react-i18next";
 import AppText from "@/presentation/ui/atoms/AppText";
 import AppButton from "@/presentation/ui/atoms/AppButton";
 import AppInput from "@/presentation/ui/atoms/AppInput";
@@ -21,6 +22,7 @@ export const LoginForm: FC<LoginFormProps> = ({
   onApplePress = () => {},
   isLoading = false,
 }) => {
+  const { t } = useTranslation();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -30,25 +32,23 @@ export const LoginForm: FC<LoginFormProps> = ({
 
   return (
     <View className="w-full">
-      {/* Email Input Field */}
       <View className="mb-4">
         <AppText className="text-white/60 font-outfit-medium text-xs mb-2 tracking-widest">
-          CORREO ELECTRÓNICO
+          {t("login.email_label")}
         </AppText>
         <AppInput
           value={email}
           onChangeText={setEmail}
-          placeholder="alex.pro@fitness.com"
+          placeholder={t("login.email_placeholder")}
           keyboardType="email-address"
           autoCapitalize="none"
           leftIcon="mail"
         />
       </View>
 
-      {/* Password Input Field */}
       <View className="mb-2">
         <AppText className="text-white/60 font-outfit-medium text-xs mb-2 tracking-widest">
-          CONTRASEÑA
+          {t("login.password_label")}
         </AppText>
         <AppInput
           value={password}
@@ -60,10 +60,9 @@ export const LoginForm: FC<LoginFormProps> = ({
         />
       </View>
 
-      {/* Forgot Password Link */}
       <Pressable onPress={onForgotPasswordPress} className="self-end py-2 mb-4">
         <AppText className="text-[#FF3E3D] font-outfit-bold text-xs tracking-wider">
-          ¿OLVIDASTE TU CONTRASEÑA?
+          {t("login.forgot_password")}
         </AppText>
       </Pressable>
 
@@ -76,13 +75,11 @@ export const LoginForm: FC<LoginFormProps> = ({
         labelStyle={{ color: "#ffffff", fontSize: 16, fontWeight: "bold" }}
         className="w-full mt-2"
       >
-        INGRESAR
+        {t("login.button_submit")}
       </AppButton>
 
-      {/* Divider */}
-      <DividerWithText text="o continúa con" />
+      <DividerWithText text={t("login.or_continue_with")} />
 
-      {/* Social Login Buttons */}
       <SocialLoginGroup
         onGooglePress={onGooglePress}
         onApplePress={onApplePress}

@@ -1,37 +1,45 @@
 import { FC } from "react";
 import AppButton from "@/presentation/ui/atoms/AppButton";
+import AppImage from "@/presentation/ui/atoms/AppImage";
 import AntDesign from "@expo/vector-icons/AntDesign";
 
 interface SocialButtonProps {
   provider: "google" | "apple";
   onPress: () => void;
   className?: string;
+  labelText?: string;
+  colorButton?: string;
 }
 
 export const SocialButton: FC<SocialButtonProps> = ({
   provider,
   onPress,
   className = "",
+  labelText,
+  colorButton = "#2B2B2B",
 }) => {
-  const iconName = provider === "google" ? "google" : "apple1";
-  const labelText = provider === "google" ? "Google" : "Apple";
+  const isGoogle = provider === "google";
 
   return (
     <AppButton
       variant="oauth"
       onPress={onPress}
-      className={`flex-1 border border-white/10 rounded-full bg-[#1c1c1e] ${className}`}
-      contentStyle={{ paddingVertical: 10 }}
+      style={{ flex: 1, borderRadius: 100 }}
+      contentStyle={{ paddingVertical: 12 }}
+      className={`bg-[#121212] border border-white/10 ${className}`}
+      buttonColor={colorButton}
       icon={() => (
-        <AntDesign
-          name={iconName}
-          size={18}
-          color="white"
-          style={{ marginRight: 6 }}
-        />
+        isGoogle ? (
+          <AppImage
+            source={require("@/presentation/assets/img/google-botton-icon.png")}
+            className="w-6 h-6"
+          />
+        ) : (
+          <AntDesign name="apple1" size={24} color="white" />
+        )
       )}
     >
-      {labelText}
+      {labelText || (isGoogle ? "Google" : "Apple")}
     </AppButton>
   );
 };
