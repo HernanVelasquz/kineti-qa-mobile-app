@@ -1,8 +1,9 @@
 import { FC } from "react";
+
 import OnboardingTemplate from "@/presentation/ui/templates/OnboardingTemplate";
-import OnboardingContentCard from "@/presentation/ui/organisms/OnboardingContentCard";
 import LoginBottomSheet from "@/presentation/ui/molecules/LoginBottomSheet";
 import useOnboardingViewModel from "../viewModels/useOnboardingViewModel";
+import OnboardingContentCard from "@/presentation/ui/organisms/OnboardingContentCard";
 
 export const OnBoardingScreen: FC = () => {
   const viewModel = useOnboardingViewModel();

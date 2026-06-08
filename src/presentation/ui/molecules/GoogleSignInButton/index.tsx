@@ -1,4 +1,5 @@
 import { FC } from "react";
+import { useTranslation } from "react-i18next";
 import AppButton, { AppButtonProps } from "@/presentation/ui/atoms/AppButton";
 import AntDesign from "@expo/vector-icons/AntDesign";
 
@@ -12,6 +13,8 @@ export const GoogleSignInButton: FC<GoogleSignInButtonProps> = ({
   isLoading = false,
   ...props
 }) => {
+  const { t } = useTranslation();
+
   return (
     <AppButton
       variant="oauth"
@@ -21,7 +24,7 @@ export const GoogleSignInButton: FC<GoogleSignInButtonProps> = ({
       buttonColor="#131313"
       {...props}
     >
-      Continuar con Google
+      {t("onboarding.button_google")}
     </AppButton>
   );
 };

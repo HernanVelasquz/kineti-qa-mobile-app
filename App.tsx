@@ -1,4 +1,5 @@
 import './global.css';
+import '@/presentation/i18n';
 import 'react-native-gesture-handler';
 import { StatusBar } from 'expo-status-bar';
 import { enableScreens } from 'react-native-screens';

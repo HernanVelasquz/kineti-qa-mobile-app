@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { View } from "react-native";
+import { useTranslation } from "react-i18next";
 import AppText from "@/presentation/ui/atoms/AppText";
 import AppButton from "@/presentation/ui/atoms/AppButton";
 import AppDividerLine from "@/presentation/ui/atoms/AppDividerLine";
@@ -17,6 +18,8 @@ export const OnboardingContentCard: FC<OnboardingContentCardProps> = ({
   onGooglePress,
   onLoginLinkPress,
 }) => {
+  const { t } = useTranslation();
+
   return (
     <View className="w-full">
       <View className="px-6 w-full">
@@ -24,15 +27,15 @@ export const OnboardingContentCard: FC<OnboardingContentCardProps> = ({
 
         <View className="mb-4">
           <AppText className="text-white text-5xl font-bold italic uppercase leading-[52px]">
-            SUPERA TUS
+            {t("onboarding.title_part1")}
           </AppText>
           <AppText className="text-[#FF3E3D] text-5xl font-bold italic uppercase leading-[52px]">
-            LÍMITES
+            {t("onboarding.title_part2")}
           </AppText>
         </View>
 
         <AppText className="text-slate-100 text-[1.5rem] font-medium leading-relaxed max-w-[280]">
-          Entrenamientos de élite diseñados para tu máximo rendimiento físico.
+          {t("onboarding.subtitle")}
         </AppText>
 
         <View className="w-full my-4 gap-y-4">
@@ -41,7 +44,7 @@ export const OnboardingContentCard: FC<OnboardingContentCardProps> = ({
             onPress={onStartPress}
             buttonColor="#fff"
           >
-            COMENZAR AHORA
+            {t("onboarding.button_start")}
           </AppButton>
 
           <GoogleSignInButton onPress={onGooglePress} />

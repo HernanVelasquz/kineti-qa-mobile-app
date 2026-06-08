@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { View, Modal, Pressable, KeyboardAvoidingView, Platform } from "react-native";
+import { useTranslation } from "react-i18next";
 import AppText from "@/presentation/ui/atoms/AppText";
 import LoginForm from "@/presentation/ui/organisms/LoginForm";
 
@@ -14,6 +15,8 @@ export const LoginBottomSheet: FC<LoginBottomSheetProps> = ({
   onClose,
   onLoginSubmit,
 }) => {
+  const { t } = useTranslation();
+
   const handleSubmit = (email: string, pass: string) => {
     if (onLoginSubmit) {
       onLoginSubmit(email, pass);
@@ -42,10 +45,10 @@ export const LoginBottomSheet: FC<LoginBottomSheetProps> = ({
           {/* Header Section */}
           <View className="mb-6">
             <AppText className="text-white text-3xl font-outfit-bold mb-1">
-              Iniciar Sesión
+              {t("login.title")}
             </AppText>
             <AppText className="text-white/50 font-outfit text-sm">
-              Accede a tu perfil de alto rendimiento
+              {t("login.subtitle")}
             </AppText>
           </View>
 
